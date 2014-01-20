@@ -93,12 +93,15 @@
 
     <div class="content pure-gr">
         <div class="pure-u-1">
+
             <button class="pure-button pure-button-large" id="share-screen">Share Screen</button>
             </section>
-            <section id="screens-preview"></section>
         </div>
 
     </div>
+
+
+    <section id="screens-preview"></section>
 
 
     <script>
