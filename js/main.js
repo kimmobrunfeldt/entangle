@@ -31,56 +31,53 @@ parseUri.options = {
     }
 };
 
-$(function() {
 
+var screen;
+var screenId;
 
-    var screen;
-    var screenId;
+if (location.href.indexOf('#screen-id') !== -1) {
+    var parts = parseUri(location.href);
+    screenId = parts.relative.replace('#', '').replace('/', '');
+    console.log('existing screen' + screenId);
+    $('.screen-preview').show();
+} else {
+    screenId = 'screen-id-' + ((Math.random() * new Date().getTime()).toString(36).toLowerCase().replace(/\./g, '-'));
+}
 
-    if (location.href.indexOf('#screen-id') !== -1) {
-        var parts = parseUri(location.href);
-        screenId = parts.relative.replace('#', '');
-        console.log('existing screen' + screenId);
-        $('.screen-preview').show();
-    } else {
-        screenId = 'screen-id-' + ((Math.random() * new Date().getTime()).toString(36).toLowerCase().replace(/\./g, '-'));
-    }
+console.log(screenId);
+screen = new Screen(screenId);
 
-    screen = new Screen(screenId);
+var screensPreview = document.getElementById('screens-preview');
 
-    var screensPreview = document.getElementById('screens-preview');
+// on getting each new screen
+screen.onaddstream = function(e) {
+    console.log('addstream');
+    screensPreview.appendChild(document.createElement('hr'));
+    screensPreview.appendChild(e.video);
+    e.video.focus();
+};
 
-    // on getting each new screen
-    screen.onaddstream = function(e) {
-        console.log('addstream');
-        var parts = parseUri(location.href);
-        location.href = parts.protocol + '://' + parts.authority + '/#' + screenId;
+// using firebase for signaling
+screen.firebase = 'entangle';
 
-        screensPreview.appendChild(document.createElement('hr'));
-        screensPreview.appendChild(e.video);
-        e.video.focus();
-    };
+// if someone leaves; just remove his screen
+screen.onuserleft = function(userid) {
+    var video = document.getElementById(userid);
+    if (video && video.parentNode) video.parentNode.innerHTML = '';
+};
 
-    // using firebase for signaling
-    screen.firebase = 'signaling';
+// check pre-shared screens
+screen.check();
+console.log('check')
 
-    // if someone leaves; just remove his screen
-    screen.onuserleft = function(userid) {
-        var video = document.getElementById(userid);
-        if (video && video.parentNode) video.parentNode.innerHTML = '';
-    };
+$('#share-screen').on('click', function() {
+    screen.share();
+    var parts = parseUri(location.href);
+    location.href = parts.protocol + '://' + parts.authority + '/#' + screenId;
+    $('.screen-preview').show();
+});
 
-    // check pre-shared screens
-    screen.check();
-
-    $('#share-screen').on('click', function() {
-        screen.share();
-        $('.screen-preview').show();
-    });
-
-    $('#stop-screen-share').on('click', function() {
-        $('.screen-preview').hide();
-        screen.leave();
-    });
-
+$('#stop-screen-share').on('click', function() {
+    $('.screen-preview').hide();
+    screen.leave();
 });
