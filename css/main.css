@@ -86,7 +86,7 @@ video {
 }
 
 .screen-preview {
-    background: #444;
+    background: #eee;
     position: fixed;
     top: 0;
     left: 0;
@@ -101,7 +101,7 @@ video {
 }
 
 .close-button:hover {
-    opacity: 0.9;
+    color: #666;
     cursor:pointer;
 }
 
