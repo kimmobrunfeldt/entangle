@@ -38,20 +38,17 @@ var screenId;
 if (location.href.indexOf('#screen-id') !== -1) {
     var parts = parseUri(location.href);
     screenId = parts.relative.replace('#', '').replace('/', '');
-    console.log('existing screen' + screenId);
     $('.screen-preview').show();
 } else {
     screenId = 'screen-id-' + ((Math.random() * new Date().getTime()).toString(36).toLowerCase().replace(/\./g, '-'));
 }
 
-console.log(screenId);
 screen = new Screen(screenId);
 
 var screensPreview = document.getElementById('screens-preview');
 
 // on getting each new screen
 screen.onaddstream = function(e) {
-    console.log('addstream');
     screensPreview.appendChild(document.createElement('hr'));
     screensPreview.appendChild(e.video);
     e.video.focus();
@@ -68,7 +65,6 @@ screen.onuserleft = function(userid) {
 
 // check pre-shared screens
 screen.check();
-console.log('check')
 
 $('#share-screen').on('click', function() {
     screen.share();
