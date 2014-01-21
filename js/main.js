@@ -62,7 +62,7 @@ $(function() {
     };
 
     // using firebase for signaling
-    screen.firebase = 'entangle';
+    screen.firebase = 'signaling';
 
     // if someone leaves; just remove his screen
     screen.onuserleft = function(userid) {
