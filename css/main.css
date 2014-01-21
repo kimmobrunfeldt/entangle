@@ -1,0 +1,86 @@
+    body, .pure-g[class *="pure-u"], .pure-g-r[class *="pure-u"], * {
+        font-family:"Roboto", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-weight: 100;
+    }
+    body {
+        background: #444;
+        color: white;
+    }
+    h1, h2, h3, h4 {
+        font-weight: 100;
+    }
+
+    .flat-button {
+        font-family: inherit;
+        font-size: 150%;
+        *font-size: 90%; /*IE 6/7 - To reduce IE's oversized button text*/
+        *overflow: visible; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
+        padding: 0.5em 1em;
+        color: white;
+        border: 1px solid #999;  /*IE 6/7/8*/
+        border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+        background-color: #F1A14C;
+        text-decoration: none;
+        border-radius: 2px;
+        font-weight: 100;
+    }
+
+    .pure-button-hover,
+    .pure-button:hover,
+    .pure-button:focus {
+        background-color: #F8BA79;
+    }
+
+    a:visited {
+        color: #67B2CB;
+    }
+    a:hover {
+        color: #67B2CB;
+        text-decoration: underline;
+    }
+    a {
+        color: #67B2CB;
+        text-decoration: none;
+    }
+
+    ::selection {
+        background: #ccc;
+    }
+    ::-moz-selection {
+        background: #ccc;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0 0 0 0;
+    }
+
+    li:before {
+        content: "";
+    }
+
+    #remote-media-streams video {
+        width: 10em;
+    }
+
+    #local-media-stream video {
+        width: 34em;
+    }
+
+    video {
+        vertical-align: bottom;
+        width: 90%;
+    }
+
+    .header {
+        background: #67B2CB;
+        color: white;
+        padding: 0 0 20px 0;
+    }
+    .content {
+        padding: 50px 0 50px 0;
+    }
+
+    .center {
+        text-align: center;
+    }

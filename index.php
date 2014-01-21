@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/pure-min.css">
 
     <script>
@@ -20,13 +20,29 @@
         font-family:"Roboto", 'Helvetica Neue', Helvetica, Arial, sans-serif;
         font-weight: 100;
     }
-    body {
-        background: white;
+
+    html,body {
+        background: #F8CB9B;
     }
+
     h1, h2, h3, h4 {
         font-weight: 100;
     }
 
+    .flat-button {
+        font-family: inherit;
+        font-size: 100%;
+        *font-size: 90%; /*IE 6/7 - To reduce IE's oversized button text*/
+        *overflow: visible; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
+        padding: 0.5em 1em;
+        color: white
+        *color: #444; /* IE 6 & 7 */
+        border: 1px solid #999;  /*IE 6/7/8*/
+        border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+        background-color: #67B2CB;
+        text-decoration: none;
+        border-radius: 2px;
+    }
 
     a:visited {
         color: #67B2CB;
@@ -92,9 +108,11 @@
     </div>
 
     <div class="content pure-gr">
+
+        <i class="fa fa-desktop"></i>
         <div class="pure-u-1">
 
-            <button class="pure-button pure-button-large" id="share-screen">Share Screen</button>
+            <button class="flat-button" id="share-screen">Share Screen</button>
             </section>
         </div>
 
