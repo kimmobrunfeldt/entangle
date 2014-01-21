@@ -3,7 +3,7 @@
 Share your screen using Google Chrome without any installations/plugins.
 
 
-Demo: http://entangle.herokuapp.com
+Demo: https://entangle.herokuapp.com
 
 
 # Attribution
