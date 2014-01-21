@@ -68,6 +68,7 @@
     .content {
         text-align: center;
         padding: 100px 0 100px 0;
+        color: white;
     }
     ::selection {
         background: #ccc;

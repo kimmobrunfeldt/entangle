@@ -4,13 +4,17 @@ var screensPreview = document.getElementById('screens-preview');
 
 // on getting each new screen
 screen.onaddstream = function(e) {
+    var hash = window.location.hash.replace('#', '');
+    if (!hash.length) location.href = location.href + '#screen-id-' + ((Math.random() * new Date().getTime()).toString(36).toLowerCase().replace(/\./g, '-'));
+
     var button = document.createElement('button');
-    button.innerHTML = 'Stop Sharing Screen';
-    button.onclick = function() {
+
+    $('#stop-screen-share').on('click', function() {
         screen.leave();
         this.disabled = true;
-    };
-    screensPreview.appendChild(button);
+        $('.screen-preview').show();
+    });
+
     screensPreview.appendChild(document.createElement('hr'));
     screensPreview.appendChild(e.video);
     e.video.focus();
@@ -32,5 +36,5 @@ document.getElementById('share-screen').onclick = function() {
     screen.share();
     this.disabled = true;
 
-    this.parentNode.innerHTML = '<h2><a href="' + location.href + '" target="_blank">Share this link</a></h2>';
+    $('.screen-preview').show();
 };

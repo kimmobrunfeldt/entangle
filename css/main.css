@@ -1,86 +1,104 @@
-    body, .pure-g[class *="pure-u"], .pure-g-r[class *="pure-u"], * {
-        font-family:"Roboto", 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-weight: 100;
-    }
-    body {
-        background: #444;
-        color: white;
-    }
-    h1, h2, h3, h4 {
-        font-weight: 100;
-    }
+body, .pure-g[class *="pure-u"], .pure-g-r[class *="pure-u"], * {
+    font-family:"Roboto", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+}
 
-    .flat-button {
-        font-family: inherit;
-        font-size: 150%;
-        *font-size: 90%; /*IE 6/7 - To reduce IE's oversized button text*/
-        *overflow: visible; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
-        padding: 0.5em 1em;
-        color: white;
-        border: 1px solid #999;  /*IE 6/7/8*/
-        border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
-        background-color: #F1A14C;
-        text-decoration: none;
-        border-radius: 2px;
-        font-weight: 100;
-    }
+body, html {
+    height: 100%;
+    min-width: 400px;
+}
 
-    .pure-button-hover,
-    .pure-button:hover,
-    .pure-button:focus {
-        background-color: #F8BA79;
-    }
+body {
+    color: black;
+    background: #f3f3f3;
+}
 
-    a:visited {
-        color: #67B2CB;
-    }
-    a:hover {
-        color: #67B2CB;
-        text-decoration: underline;
-    }
-    a {
-        color: #67B2CB;
-        text-decoration: none;
-    }
+h1 {
+    font-size: 3em;
+    font-weight: 300;
+}
 
-    ::selection {
-        background: #ccc;
-    }
-    ::-moz-selection {
-        background: #ccc;
-    }
+h2 {
+    font-size: 2em;
+}
 
-    ul {
-        list-style: none;
-        padding: 0 0 0 0;
-    }
+.pure-g {
+    letter-spacing: 0em;
+}
 
-    li:before {
-        content: "";
-    }
+.flat-button {
+    font-family: inherit;
+    font-size: 150%;
+    *font-size: 90%; /*IE 6/7 - To reduce IE's oversized button text*/
+    *overflow: visible; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
+    padding: 0.5em 1em;
+    color: white;
+    border: 1px solid #999;  /*IE 6/7/8*/
+    border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+    background-color: #F1A14C;
+    text-decoration: none;
+    border-radius: 2px;
+    font-weight: 100;
+}
 
-    #remote-media-streams video {
-        width: 10em;
-    }
+.pure-button-hover,
+.pure-button:hover,
+.pure-button:focus {
+    background-color: #F8BA79;
+}
 
-    #local-media-stream video {
-        width: 34em;
-    }
+a:visited {
+    color: #67B2CB;
+}
+a:hover {
+    color: #67B2CB;
+    text-decoration: underline;
+}
+a {
+    color: #67B2CB;
+    text-decoration: none;
+}
 
-    video {
-        vertical-align: bottom;
-        width: 90%;
-    }
+::selection {
+    background: #ccc;
+}
+::-moz-selection {
+    background: #ccc;
+}
 
-    .header {
-        background: #67B2CB;
-        color: white;
-        padding: 0 0 20px 0;
-    }
-    .content {
-        padding: 50px 0 50px 0;
-    }
+ul {
+    list-style: square;
+    padding: 0 0 0 0;
+}
 
-    .center {
-        text-align: center;
-    }
+
+#remote-media-streams video {
+    width: 10em;
+}
+
+#local-media-stream video {
+    width: 34em;
+}
+
+video {
+    vertical-align: bottom;
+    width: 90%;
+}
+
+.screen-preview {
+    visibility: hidden;
+    background: #444;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.close-button {
+    z-index: 999;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}

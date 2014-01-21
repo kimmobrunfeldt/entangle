@@ -1,0 +1,68 @@
+.landing {
+    height: 100%;
+    width: 100%;
+    min-height: 600px;
+    position:relative;
+}
+
+
+@media all and (max-width: 500px) {
+  .landing {
+    min-height: 600px;
+  }
+}
+
+.landing-upper {
+    height: 30%;
+    min-height: 220px;
+    background: #67B2CB;
+}
+
+.landing-lower {
+    height: 60%;
+}
+
+.header {
+    color: white;
+    padding: 0 0 20px 0;
+    text-align: center;
+}
+.selling {
+    padding: 70px 0 20px 0;
+}
+
+.selling .pure-u-1-2 {
+    vertical-align: middle;
+}
+
+.half-box {
+    padding: 0.5em 2em;
+}
+
+.usage-steps {
+    margin: 0;
+}
+
+.usage-steps li {
+    line-height: 2em;
+}
+
+.screen {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.read-more {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: #67B2CB;
+}
+
+.read-more h3 {
+    margin: 0;
+}
+
+.fa-angle-double-down {
+    margin: 0.1em 0 0 0 ;
+}
