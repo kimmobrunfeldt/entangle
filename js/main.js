@@ -54,7 +54,7 @@ $(function() {
     screen.onaddstream = function(e) {
         console.log('addstream');
         var parts = parseUri(location.href);
-        location.href = parts.protocol + parts.authority + '/#' + screenId;
+        location.href = parts.protocol + '://' + parts.authority + '/#' + screenId;
 
         screensPreview.appendChild(document.createElement('hr'));
         screensPreview.appendChild(e.video);
